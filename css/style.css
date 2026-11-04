@@ -1,7 +1,12 @@
-﻿
-/* =========================
-   GENERAL
-========================= */
+﻿/* =========================================
+   AGROFARMS WEBSITE
+   CLEANED AND RESPONSIVE STYLESHEET
+========================================= */
+
+
+/* =========================================
+   1. GENERAL STYLES
+========================================= */
 
 * {
     margin: 0;
@@ -14,21 +19,40 @@ body {
     min-height: 100%;
 }
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 120px;
+}
+
 body {
     font-family: Arial, sans-serif;
-
     background-image: url("../assets/farm-background.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-
     color: #333333;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+}
+
+section[id],
+[id] {
+    scroll-margin-top: 120px;
 }
 
 
-/* =========================
-   NAVIGATION
-========================= */
+/* =========================================
+   2. NAVIGATION
+========================================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
 .navbar {
     width: 100%;
@@ -36,18 +60,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     padding: 8px 40px;
-
     background-color: rgba(255, 255, 255, 0.94);
-
+    position: relative;
 }
 
-
-/* =========================
-   LOGO
-========================= */
-
+/* Logo */
 
 .logo {
     display: flex;
@@ -58,70 +76,48 @@ body {
 .logo img {
     width: 100px;
     height: 100px;
-
     object-fit: cover;
-
     border-radius: 50%;
-
     display: block;
 }
 
-
-/* =========================
-   COMPANY NAME
-========================= */
+/* Company name */
 
 .company-name {
     display: flex;
     flex-direction: column;
-
     line-height: 1.1;
 }
 
 .company-name span {
     color: #176b36;
-
     font-size: 30px;
-
     font-weight: 700;
-
     letter-spacing: 2px;
 }
 
 .company-name small {
     color: #555555;
-
     font-size: 12px;
-
     font-weight: 600;
-
     letter-spacing: 1px;
-
     margin-top: 4px;
 }
 
-/* =========================
-   NAVIGATION LINKS
-========================= */
+/* Navigation links */
 
 .nav-links {
     display: flex;
     align-items: center;
-
     gap: 30px;
-
     list-style: none;
 }
 
 .nav-links li a {
     text-decoration: none;
-
     color: #176b36;
-
     font-size: 20px;
-
     font-weight: 600;
-
     transition: color 0.3s ease;
 }
 
@@ -130,35 +126,21 @@ body {
 }
 
 
-/* =========================
-   MAIN HERO SECTION
-========================= */
+/* =========================================
+   3. MAIN HERO SECTION
+========================================= */
 
 .hero-section {
     width: 98%;
     height: 500px;
-
-    margin: 0px auto;
-
+    margin: 0 auto;
     display: flex;
-
     position: relative;
-
     overflow: hidden;
-
     background: rgba(255, 255, 255, 0.45);
-
     backdrop-filter: blur(4px);
 
-    /*
-       FADE ONLY THE LEFT SIDE
-
-       Left side:
-       transparent → visible
-
-       Right side:
-       completely visible
-    */
+    /* Fade only the left side */
 
     -webkit-mask-image: linear-gradient(
         to right,
@@ -175,38 +157,27 @@ body {
     );
 }
 
-
-/* =========================
-   COMPANY INFORMATION
-========================= */
+/* Company information */
 
 .intro {
     width: 40%;
     height: 100%;
-
     padding: 50px;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
-
     position: relative;
+    min-width: 0;
 }
 
-
-/* =========================
-   GOLD DECORATIVE LINE
-========================= */
+/* Gold decorative line */
 
 .intro::before {
     content: "";
-
     position: absolute;
-
     top: 30px;
     bottom: 30px;
     left: 25px;
-
     width: 3px;
 
     background: linear-gradient(
@@ -219,127 +190,85 @@ body {
     border-radius: 10px;
 }
 
-
-/* =========================
-   COMPANY HEADING
-========================= */
+/* Company heading */
 
 .intro h1 {
     font-size: 40px;
-
     line-height: 1.2;
-
     color: #176b36;
-
     margin-bottom: 20px;
+    overflow-wrap: anywhere;
 }
 
-
-/* =========================
-   COMPANY DESCRIPTION
-========================= */
+/* Company description */
 
 .intro p {
     font-size: 17px;
-
     line-height: 1.7;
-
     color: #444444;
-
     max-width: 500px;
 }
 
 
-/* =========================
-   IMAGE SLIDER
-========================= */
+/* =========================================
+   4. IMAGE SLIDER
+========================================= */
 
 .slider {
     width: 60%;
     height: 100%;
     border-radius: 20px;
     position: relative;
-
     overflow: hidden;
+    min-width: 0;
 }
 
-
-/* =========================
-   SLIDES
-========================= */
+/* Slides container */
 
 .slides {
     display: flex;
-
     width: 100%;
     height: 100%;
-
     transition: transform 0.5s ease;
 }
+
+/* Slider images */
 
 .slides img {
     width: 100%;
     height: 100%;
-    
     object-fit: cover;
-
     flex-shrink: 0;
 }
 
-
-/* =========================
-   GOLD DIVIDER
-========================= */
+/* Gold divider */
 
 .slider::before {
     content: "";
-
     position: absolute;
-
     top: 10px;
     bottom: 10px;
-
     left: 0;
-
     width: 4px;
-
-    
-
-   
     z-index: 3;
 }
 
-
-/* =========================
-   FLOATING SLIDER ARROWS
-========================= */
+/* Slider buttons */
 
 .slider button {
     position: absolute;
-
     top: 50%;
-
     transform: translateY(-50%);
-
     width: auto;
     height: auto;
-
     padding: 10px;
-
     border: none;
-
     background: transparent;
-
     color: #ffffff;
-
     font-size: 34px;
-
     font-weight: 300;
-
     line-height: 1;
-
     cursor: pointer;
-
     opacity: 0.75;
 
     transition:
@@ -350,25 +279,14 @@ body {
     z-index: 4;
 }
 
-
-/* =========================
-   ARROW HOVER
-========================= */
-
 .slider button:hover {
     background: transparent;
-
     color: #d4af37;
-
     opacity: 1;
-
     transform: translateY(-50%) scale(1.15);
 }
 
-
-/* =========================
-   ARROW POSITIONS
-========================= */
+/* Slider arrow positions */
 
 .prev {
     left: 15px;
@@ -379,206 +297,56 @@ body {
 }
 
 
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 900px) {
-
-    .navbar {
-        height: auto;
-
-        padding: 10px 20px;
-
-        flex-direction: column;
-
-        gap: 12px;
-    }
-
-
-    .nav-links {
-        gap: 15px;
-
-        flex-wrap: wrap;
-
-        justify-content: center;
-    }
-
-
-    .nav-links li a {
-        font-size: 14px;
-    }
-
-
-    /* HERO SECTION */
-
-    .hero-section {
-        width: 100%;
-        height: auto;
-
-        margin: 20px auto;
-
-        display: flex;
-        flex-direction: column;
-
-        -webkit-mask-image: none;
-        mask-image: none;
-    }
-
-
-    /* COMPANY INFORMATION */
-
-    .intro {
-        width: 100%;
-        height: auto;
-
-        padding: 45px 30px;
-
-        text-align: center;
-    }
-
-
-    .intro::before {
-        top: 15px;
-        bottom: 15px;
-
-        left: 12px;
-
-        width: 3px;
-    }
-
-
-    .intro h1 {
-        font-size: 30px;
-    }
-
-
-    .intro p {
-        margin: 0 auto;
-    }
-
-
-    /* SLIDER */
-
-    .slider {
-        width: 100%;
-        height: 350px;
-    }
-
-
-    /* GOLD DIVIDER */
-
-    .slider::before {
-        top: 0;
-        bottom: 0;
-
-        left: 0;
-
-        width: 3px;
-
-        height: 100%;
-
-        background: linear-gradient(
-            to bottom,
-            #b8941f,
-            #d4af37,
-            #f5dc73,
-            #d4af37,
-            #b8941f
-        );
-    }
-
-
-    /* MOBILE ARROWS */
-
-    .slider button {
-        font-size: 28px;
-
-        padding: 8px;
-    }
-
-    .prev {
-        left: 8px;
-    }
-
-    .next {
-        right: 8px;
-    }
-}
-
-
-
-
-/* =========================
-   ABOUT US HERO
-========================= */
+/* =========================================
+   5. ABOUT US HERO
+========================================= */
 
 .about-hero {
     min-height: 10px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     text-align: center;
-
     position: relative;
-
     background: none;
-
     background-size: cover;
     background-position: center;
-
     color: #176b36;
 }
 
-
 .about-hero-content {
     max-width: 850px;
-
     padding: 20px 15px;
 }
 
-
 .about-hero .section-label {
     color: #d4af37;
-
     font-size: 14px;
-
     font-weight: 700;
-
     letter-spacing: 3px;
 }
 
-
 .about-hero h1 {
     font-family: "Open Sans", sans-serif;
-    margin-top: 0px;
-
+    margin-top: 0;
     font-size: 45px;
-
     line-height: 1.15;
-
     font-weight: 700;
+    overflow-wrap: anywhere;
 }
-
 
 .about-hero p {
     margin-top: 20px;
-
     color: #b8941f;
-
     font-size: 18px;
-
     font-weight: 600;
-
     letter-spacing: 1px;
 }
 
 
-/* =========================
-   GENERAL ABOUT SECTIONS
-========================= */
+/* =========================================
+   6. GENERAL ABOUT SECTIONS
+========================================= */
 
 .who-we-are,
 .vision-mission,
@@ -586,49 +354,38 @@ body {
 .operations,
 .long-term {
     width: 100%;
-
     padding: 50px 8%;
 }
 
-
-/* =========================
-   SECTION LABEL
-========================= */
+/* Section labels */
 
 .section-label {
     display: block;
-
     color: #176b36;
-
     font-size: 20px;
-
     font-weight: 700;
-
     letter-spacing: 2px;
-
     margin-bottom: 12px;
 }
 
 
-/* =========================
-   WHO WE ARE
-========================= */
+/* =========================================
+   7. WHO WE ARE
+========================================= */
 
 .who-we-are {
     display: flex;
-
     align-items: center;
-
     gap: 70px;
-
     background: rgba(255, 255, 255, 0.96);
+    flex-wrap: wrap;
 }
-
 
 .who-text {
     width: 55%;
+    flex: 1 1 55%;
+    min-width: 0;
 }
-
 
 .who-text h2,
 .vision h2,
@@ -636,127 +393,104 @@ body {
 .section-heading h2,
 .operations h2 {
     color: #176b36;
-
     font-size: 36px;
-
     line-height: 1.2;
-
     margin-bottom: 22px;
+    overflow-wrap: anywhere;
 }
-
 
 .who-text p {
     color: #444444;
-
     font-size: 16px;
-
     line-height: 1.8;
-
     margin-bottom: 18px;
 }
 
+.who-we-are h1 {
+    max-width: 750px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    color: #176b36;
+    text-align: left;
+    font-size: 26px;
+}
+
+/* Who we are image */
 
 .who-image {
     width: 45%;
-
+    flex: 1 1 45%;
     border-radius: 20px;
     height: 420px;
-
     overflow: hidden;
+    min-width: 0;
 }
-
 
 .who-image img {
     width: 100%;
     height: 100%;
-
     object-fit: cover;
-
     display: block;
 }
 
 
-/* =========================
-   VISION & MISSION
-========================= */
+/* =========================================
+   8. VISION AND MISSION
+========================================= */
 
 .vision-mission {
     display: grid;
-
     grid-template-columns: 1fr 1fr;
-
     gap: 50px;
-
 }
-
 
 .vision,
 .mission {
     padding: 45px;
-
     border-left: 4px solid #d4af37;
-    
     border-radius: 10px;
-
     background: #f5f8f5;
 }
-
 
 .vision p,
 .mission p {
     color: #444444;
-
     font-size: 16px;
-
     line-height: 1.8;
 }
 
 
-/* =========================
-   CORE VALUES
-========================= */
+/* =========================================
+   9. CORE VALUES
+========================================= */
 
 .core-values {
     background: rgba(255, 255, 255, 0.96);
 }
 
-
 .section-heading {
     max-width: 750px;
-
     margin: 0 auto 50px;
-
     text-align: center;
 }
 
-
 .section-heading p {
     color: #555555;
-
     font-size: 16px;
-
     line-height: 1.7;
 }
 
-
 .values-grid {
     display: grid;
-
     grid-template-columns: repeat(3, 1fr);
-
     gap: 25px;
-
     max-width: 1200px;
-
     margin: 0 auto;
 }
 
-
 .value {
     padding: 30px;
-
     background: #f5f8f5;
-
     border-top: 3px solid #d4af37;
 
     transition:
@@ -764,213 +498,60 @@ body {
         box-shadow 0.3s ease;
 }
 
-
 .value:hover {
     transform: translateY(-5px);
-
-    box-shadow:
-        0 10px 25px rgba(0, 0, 0, 0.10);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.10);
 }
-
 
 .value h3 {
     color: #176b36;
-
     font-size: 20px;
-
     margin-bottom: 12px;
 }
 
-
 .value p {
     color: #555555;
-
     font-size: 14px;
-
     line-height: 1.7;
 }
 
 
+/* =========================================
+   10. SECTION DIVIDER
+========================================= */
 
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 900px) {
-
-    /* ABOUT HERO */
-
-    .about-hero {
-        min-height: 380px;
-    }
-
-
-    .about-hero h1 {
-        font-size: 38px;
-    }
-
-
-    .about-hero p {
-        font-size: 16px;
-    }
-
-
-    /* GENERAL SECTIONS */
-
-    .who-we-are,
-    .vision-mission,
-    .core-values,
-    .operations,
-    .long-term {
-        padding: 65px 30px;
-    }
-
-
-    /* WHO WE ARE */
-
-    .who-we-are {
-        flex-direction: column;
-
-        gap: 40px;
-    }
-
-
-    .who-text,
-    .who-image {
-        width: 100%;
-    }
-
-
-    .who-image {
-        height: 350px;
-    }
-
-
-    /* VISION & MISSION */
-
-    .vision-mission {
-        grid-template-columns: 1fr;
-
-        gap: 25px;
-    }
-
-
-    .vision,
-    .mission {
-        padding: 30px;
-    }
-
-
-    /* CORE VALUES */
-
-    .values-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-
-    /* OPERATIONS */
-
-    .operations {
-        flex-direction: column;
-
-        gap: 40px;
-    }
-
-
-    .operations-text,
-    .operations-image {
-        width: 100%;
-    }
-
-
-    .operations-image {
-        height: 350px;
-    }
-
-}
-
-
-/* =========================
-   SMALL MOBILE
-========================= */
-
-@media (max-width: 600px) {
-
-    .about-hero {
-        min-height: 330px;
-    }
-
-
-    .about-hero h1 {
-        font-size: 32px;
-    }
-
-
-    .who-we-are,
-    .vision-mission,
-    .core-values,
-    .operations,
-    .long-term {
-        padding: 55px 20px;
-    }
-
-
-    .who-text h2,
-    .vision h2,
-    .mission h2,
-    .section-heading h2,
-    .operations h2,
-    .long-term h2 {
-        font-size: 29px;
-    }
-
-
-    .values-grid {
-        grid-template-columns: 1fr;
-    }
-
-
-    .value {
-        padding: 25px;
-    }
-
-}
 .section-divider {
-    width: fit-content;
+    width: 100%;
     padding: 60px 8%;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     background: none;
 }
 
 .section-divider span {
-    width: 1000px;
+    width: 100%;
+    max-width: 1000px;
     height: 3px;
-    align-items: center;
     background: #D4AF37;
 }
 
+
+/* =========================================
+   11. WHAT WE DO / SERVICES
+========================================= */
+
 .service-grid {
     display: grid;
-
     grid-template-columns: repeat(4, 1fr);
-
     gap: 25px;
-
     max-width: 1200px;
-
     margin: 0 auto;
 }
 
-
 .service {
     padding: 30px;
-
     background: #f5f8f5;
-
     border-top: 3px solid #d4af37;
 
     transition:
@@ -978,30 +559,33 @@ body {
         box-shadow 0.3s ease;
 }
 
-
 .service:hover {
     transform: translateY(-5px);
-
-    box-shadow:
-        0 10px 25px rgba(0, 0, 0, 0.10);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.10);
 }
-
 
 .service h3 {
     color: #176b36;
-
     font-size: 20px;
-
     margin-bottom: 12px;
 }
 
-
 .service p {
     color: #555555;
-
     font-size: 14px;
-
     line-height: 1.7;
+}
+
+
+/* =========================================
+   12. GOALS
+========================================= */
+
+.goals-heading {
+    max-width: 750px;
+    padding-top: 20px;
+    margin: 100px auto 50px;
+    text-align: center;
 }
 
 .goals-grid {
@@ -1019,9 +603,10 @@ body {
     border-top: 3px solid #d4af37;
     min-height: 220px;
     height: 100%;
-    box-sizing: border-box;
 
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .goals:hover {
@@ -1031,9 +616,7 @@ body {
 
 .goals h3 {
     color: #176b36;
-
     font-size: 20px;
-
     margin-bottom: 12px;
 }
 
@@ -1043,130 +626,90 @@ body {
     line-height: 1.6;
 }
 
-/* Tablets */
-@media (max-width: 900px) {
-    .goals-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
 
-/* Phones */
-@media (max-width: 600px) {
-    .goals-grid {
-        grid-template-columns: 1fr;
-    }
-}
-.goals-heading {
-     max-width: 750px;
-     padding-top: 20px;
-    margin: 100 auto 50px;
-
-    text-align: center;
-}
-
-/* =========================
-   OPERATIONS
-========================= */
+/* =========================================
+   13. OPERATIONS
+========================================= */
 
 .operations {
     display: flex;
     gap: 70px;
+    flex-wrap: wrap;
 }
+
 .operations h1 {
     color: #176b36;
-
     font-size: 30px;
-
     line-height: 1.2;
-
     margin-bottom: 2px;
+    overflow-wrap: anywhere;
 }
 
 .operations-text {
     width: 55%;
+    flex: 1 1 55%;
+    min-width: 0;
 }
-
 
 .operations-text p {
     color: #444444;
-
     font-size: 16px;
-
     line-height: 1.8;
-
     margin-bottom: 20px;
 }
 
-
 .operations-text ul {
     list-style: none;
-
     margin: 25px 0;
 }
 
-
 .operations-text li {
     position: relative;
-
     padding-left: 25px;
-
     margin-bottom: 12px;
-
     color: #333333;
-
     font-size: 16px;
-
     font-weight: 600;
 }
 
-
 .operations-text li::before {
     content: "◆";
-
     position: absolute;
-
     left: 0;
-
     color: #d4af37;
-
     font-size: 11px;
 }
 
+/* Operations image */
 
 .operations-image {
     width: 45%;
-
+    flex: 1 1 45%;
     height: 300px;
-
     border-radius: 10px;
     overflow: hidden;
+    min-width: 0;
 }
-
 
 .operations-image img {
     width: 100%;
     height: 100%;
-
     object-fit: cover;
-
     display: block;
 }
-.who-we-are h1 {
-    max-width: 750px;
-    padding-top: 10px;
-    padding-bottom: 15px;
-    color: #176b36;
-    text-align: left;
-    font-size: 26px;
 
-}
-/* PRODUCTS SECTION */
+
+/* =========================================
+   14. PRODUCTS
+========================================= */
+
 #products {
     padding: 90px 8%;
     background: #ffffff;
 }
 
-/* Section heading */
+/* Products heading */
+
 .products-heading {
     max-width: 760px;
     margin: 0 auto 55px;
@@ -1186,6 +729,7 @@ body {
     color: #176b36;
     font-size: 42px;
     margin: 0 0 18px;
+    overflow-wrap: anywhere;
 }
 
 .products-heading p {
@@ -1196,6 +740,7 @@ body {
 }
 
 /* Product cards */
+
 .products-grid {
     max-width: 1150px;
     margin: 0 auto;
@@ -1210,7 +755,10 @@ body {
     background: #f7f9f6;
     border: 1px solid #e6ebe5;
     border-radius: 4px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .product-card:hover {
@@ -1247,43 +795,17 @@ body {
     margin: 0;
 }
 
-/* Tablet */
-@media (max-width: 900px) {
-    .products-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
 
-/* Mobile */
-@media (max-width: 600px) {
-    #products {
-        padding: 60px 6%;
-    }
+/* =========================================
+   15. CONTACT SECTION
+========================================= */
 
-    .products-heading {
-        margin-bottom: 35px;
-    }
-
-    .products-heading h2 {
-        font-size: 32px;
-    }
-
-    .products-grid {
-        grid-template-columns: 1fr;
-        gap: 18px;
-    }
-
-    .product-card {
-        padding: 25px;
-    }
-}
-
-/* CONTACT SECTION */
 #contact {
     padding: 85px 8%;
 }
 
-/* Heading */
+/* Contact heading */
+
 .contact-heading {
     max-width: 750px;
     margin: 0 auto 50px;
@@ -1301,15 +823,17 @@ body {
     color: #176b36;
     font-size: 40px;
     margin: 12px 0;
+    overflow-wrap: anywhere;
 }
 
 .contact-heading p {
-    color: #555;
+    color: #555555;
     font-size: 16px;
     line-height: 1.8;
 }
 
-/* Main container */
+/* Main contact container */
+
 .contact-container {
     max-width: 1150px;
     margin: 0 auto;
@@ -1320,10 +844,12 @@ body {
 }
 
 /* Contact information */
+
 .contact-info {
     background: #f5f8f5;
     color: #d4af37;
     padding: 45px 35px;
+    min-width: 0;
 }
 
 .contact-info h3 {
@@ -1372,8 +898,10 @@ body {
 }
 
 /* Contact form */
+
 .contact-form-container {
     padding: 45px;
+    min-width: 0;
 }
 
 .contact-form-container h3 {
@@ -1395,7 +923,7 @@ body {
 }
 
 .form-group label {
-    color: #333;
+    color: #333333;
     font-size: 14px;
     font-weight: 600;
     margin-bottom: 9px;
@@ -1411,7 +939,6 @@ body {
     outline: none;
     font-family: inherit;
     font-size: 14px;
-    box-sizing: border-box;
     background: #fefffe;
 }
 
@@ -1424,6 +951,8 @@ body {
 .form-group textarea {
     resize: vertical;
 }
+
+/* Contact button */
 
 .contact-button {
     background: #176b36;
@@ -1441,29 +970,684 @@ body {
     color: #ffffff;
 }
 
-/* Responsive design */
-@media (max-width: 850px) {
+
+/* =========================================
+   16. TABLET RESPONSIVENESS
+   Screens up to 900px
+========================================= */
+
+@media (max-width: 900px) {
+
+    /* Navigation */
+
+    .navbar {
+        height: auto;
+        padding: 10px 20px;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .logo img {
+        width: 76px;
+        height: 76px;
+    }
+
+    .company-name span {
+        font-size: 25px;
+    }
+
+    .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-links li a {
+        font-size: 14px;
+    }
+
+    /* Navigation scrolling offset */
+
+    html {
+        scroll-padding-top: 145px;
+    }
+
+    section[id],
+    [id] {
+        scroll-margin-top: 145px;
+    }
+
+    /* Hero section */
+
+    .hero-section {
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        margin: 20px auto;
+        display: flex;
+        flex-direction: column;
+        -webkit-mask-image: none;
+        mask-image: none;
+    }
+
+    .intro {
+        width: 100%;
+        height: auto;
+        padding: 40px 30px 40px 38px;
+        text-align: center;
+    }
+
+    .intro::before {
+        top: 15px;
+        bottom: 15px;
+        left: 12px;
+        width: 3px;
+    }
+
+    .intro h1 {
+        font-size: 30px;
+    }
+
+    .intro p {
+        margin: 0 auto;
+    }
+
+    /* Slider */
+
+    .slider {
+        width: 100%;
+        height: 350px;
+    }
+
+    .slider::before {
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 3px;
+        height: 100%;
+
+        background: linear-gradient(
+            to bottom,
+            #b8941f,
+            #d4af37,
+            #f5dc73,
+            #d4af37,
+            #b8941f
+        );
+    }
+
+    .slider button {
+        font-size: 28px;
+        padding: 8px;
+    }
+
+    .prev {
+        left: 8px;
+    }
+
+    .next {
+        right: 8px;
+    }
+
+    /* About hero */
+
+    .about-hero {
+        min-height: 380px;
+    }
+
+    .about-hero h1 {
+        font-size: 38px;
+    }
+
+    .about-hero p {
+        font-size: 16px;
+    }
+
+    /* General sections */
+
+    .who-we-are,
+    .vision-mission,
+    .core-values,
+    .operations,
+    .long-term {
+        padding: 65px 30px;
+    }
+
+    /* Who we are */
+
+    .who-we-are {
+        flex-direction: column;
+        gap: 35px;
+    }
+
+    .who-text,
+    .who-image {
+        width: 100%;
+    }
+
+    .who-image {
+        height: 350px;
+    }
+
+    /* Vision and mission */
+
+    .vision-mission {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .vision,
+    .mission {
+        padding: 30px;
+    }
+
+    /* Core values */
+
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Services */
+
+    .service-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    /* Goals */
+
+    .goals-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    /* Operations */
+
+    .operations {
+        flex-direction: column;
+        gap: 35px;
+    }
+
+    .operations-text,
+    .operations-image {
+        width: 100%;
+    }
+
+    .operations-image {
+        height: 350px;
+    }
+
+    /* Products */
+
+    .products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    /* Contact */
+
     .contact-container {
         grid-template-columns: 1fr;
     }
 }
 
+
+/* =========================================
+   17. MOBILE RESPONSIVENESS
+   Screens up to 600px
+========================================= */
+
 @media (max-width: 600px) {
+
+    /* General */
+
+    body {
+        background-attachment: scroll;
+    }
+
+    html {
+        scroll-padding-top: 130px;
+    }
+
+    section[id],
+    [id] {
+        scroll-margin-top: 130px;
+    }
+
+    /* Navigation */
+
+    .navbar {
+        height: auto;
+        min-height: 0;
+        padding: 10px 14px;
+        gap: 10px;
+    }
+
+    .logo {
+        justify-content: center;
+        gap: 9px;
+    }
+
+    .logo img {
+        width: 58px;
+        height: 58px;
+    }
+
+    .company-name span {
+        font-size: clamp(18px, 5vw, 23px);
+        letter-spacing: 1px;
+    }
+
+    .company-name small {
+        font-size: 10px;
+        letter-spacing: 0.5px;
+    }
+
+    .nav-links {
+        width: 100%;
+        gap: 10px 16px;
+    }
+
+    .nav-links li a {
+        font-size: 13px;
+    }
+
+    /* Hero section */
+
+    .hero-section {
+        width: 100%;
+        margin: 12px auto;
+    }
+
+    .intro {
+        padding: 35px 24px 35px 32px;
+    }
+
+    .intro h1 {
+        font-size: clamp(25px, 7vw, 30px);
+    }
+
+    .intro p {
+        font-size: 15px;
+    }
+
+    /* Slider */
+
+    .slider {
+        height: clamp(220px, 65vw, 350px);
+    }
+
+    /* About hero */
+
+    .about-hero {
+        min-height: 300px;
+    }
+
+    .about-hero h1 {
+        font-size: clamp(28px, 8vw, 32px);
+    }
+
+    /* General sections */
+
+    .who-we-are,
+    .vision-mission,
+    .core-values,
+    .operations,
+    .long-term {
+        padding: 55px 20px;
+    }
+
+    /* Section headings */
+
+    .who-text h2,
+    .vision h2,
+    .mission h2,
+    .section-heading h2,
+    .operations h2,
+    .long-term h2 {
+        font-size: 29px;
+    }
+
+    /* Who we are */
+
+    .who-we-are,
+    .operations {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .who-text,
+    .who-image,
+    .operations-text,
+    .operations-image {
+        width: 100%;
+        flex-basis: 100%;
+    }
+
+    .who-image,
+    .operations-image {
+        height: clamp(220px, 65vw, 350px);
+    }
+
+    /* Vision and mission */
+
+    .vision-mission {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    /* Core values */
+
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .value {
+        padding: 25px;
+    }
+
+    /* Services and goals */
+
+    .service-grid,
+    .goals-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    /* Divider */
+
+    .section-divider {
+        padding: 40px 6%;
+    }
+
+    /* Products */
+
+    #products {
+        padding: 55px 5%;
+    }
+
+    .products-heading {
+        margin-bottom: 35px;
+    }
+
+    .products-heading h2 {
+        font-size: clamp(28px, 8vw, 32px);
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .product-card {
+        padding: 25px;
+    }
+
+    /* Contact */
+
     #contact {
-        padding: 60px 5%;
+        padding: 55px 5%;
     }
 
     .contact-heading h2 {
-        font-size: 32px;
+        font-size: clamp(28px, 8vw, 32px);
+    }
+
+    .contact-container {
+        grid-template-columns: minmax(0, 1fr);
     }
 
     .contact-info,
     .contact-form-container {
-        padding: 30px 22px;
+        padding: 28px 20px;
     }
 
     .form-row {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
         gap: 0;
+    }
+}
+
+
+/* =========================================
+   18. ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
+/* =========================================
+   19. FLUID RESPONSIVE DESIGN
+========================================= */
+
+:root {
+    /* Fluid typography */
+    --heading-xl: clamp(2rem, 4vw, 3.5rem);
+    --heading-lg: clamp(1.7rem, 3vw, 2.5rem);
+    --heading-md: clamp(1.3rem, 2vw, 1.8rem);
+    --text-size: clamp(0.875rem, 1.1vw, 1.125rem);
+
+    /* Fluid spacing */
+    --section-space: clamp(35px, 6vw, 90px);
+    --content-space: clamp(15px, 4vw, 60px);
+    --card-space: clamp(18px, 2.5vw, 35px);
+
+    /* Fluid image sizing */
+    --image-height: clamp(220px, 35vw, 450px);
+}
+
+/* Headings */
+
+.intro h1 {
+    font-size: var(--heading-xl);
+}
+
+.who-text h2,
+.vision h2,
+.mission h2,
+.section-heading h2,
+.operations h2 {
+    font-size: var(--heading-lg);
+}
+
+.products-heading h2,
+.contact-heading h2 {
+    font-size: var(--heading-xl);
+}
+
+/* Paragraphs */
+
+.intro p,
+.who-text p,
+.vision p,
+.mission p,
+.operations-text p,
+.contact-heading p {
+    font-size: var(--text-size);
+}
+
+/* Section spacing */
+
+.who-we-are,
+.vision-mission,
+.core-values,
+.operations,
+.long-term {
+    padding: var(--section-space) var(--content-space);
+}
+
+/* Cards */
+
+.value,
+.service,
+.goals,
+.product-card {
+    padding: var(--card-space);
+}
+
+/* Images */
+
+.who-image,
+.operations-image {
+    height: var(--image-height);
+}
+
+.who-image img,
+.operations-image img,
+.product-card img {
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+/* Product and service grids */
+
+.values-grid,
+.service-grid,
+.goals-grid,
+.products-grid {
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(100%, 240px), 1fr)
+    );
+}
+
+/* Contact layout */
+
+.contact-info,
+.contact-form-container {
+    padding: clamp(22px, 3vw, 45px);
+}
+
+/* Navigation */
+
+.navbar {
+    padding-left: clamp(12px, 3vw, 40px);
+    padding-right: clamp(12px, 3vw, 40px);
+}
+
+.nav-links {
+    gap: clamp(10px, 2vw, 30px);
+}
+
+.nav-links li a {
+    font-size: clamp(13px, 1.3vw, 20px);
+}
+
+/* Slider */
+
+.slider {
+    height: clamp(220px, 38vw, 500px);
+}
+
+.slides img {
+    height: 100%;
+    object-fit: cover;
+}
+
+/* =========================================
+   TABLET ADJUSTMENTS
+========================================= */
+
+@media (min-width: 601px) and (max-width: 1024px) {
+
+    .hero-section {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .intro,
+    .slider {
+        width: 100%;
+    }
+
+    .slider {
+        height: clamp(280px, 45vw, 420px);
+    }
+
+    .intro {
+        padding: clamp(25px, 4vw, 45px);
+    }
+
+    .who-we-are,
+    .operations {
+        gap: 30px;
+    }
+
+    .who-image,
+    .operations-image {
+        height: clamp(250px, 35vw, 350px);
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* =========================================
+   MOBILE ADJUSTMENTS
+========================================= */
+
+@media (max-width: 600px) {
+
+    .intro h1 {
+        font-size: clamp(24px, 7vw, 32px);
+    }
+
+    .who-text h2,
+    .vision h2,
+    .mission h2,
+    .section-heading h2,
+    .operations h2 {
+        font-size: clamp(23px, 6vw, 30px);
+    }
+
+    .intro p,
+    .who-text p,
+    .operations-text p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .who-we-are,
+    .vision-mission,
+    .core-values,
+    .operations,
+    .long-term {
+        padding: 35px 18px;
+    }
+
+    .value,
+    .service,
+    .goals,
+    .product-card {
+        padding: 22px;
+    }
+
+    .who-image,
+    .operations-image {
+        height: clamp(200px, 65vw, 300px);
+    }
+
+    .slider {
+        height: clamp(200px, 65vw, 300px);
+    }
+
+    .contact-info,
+    .contact-form-container {
+        padding: 22px 17px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 16px;
     }
 }

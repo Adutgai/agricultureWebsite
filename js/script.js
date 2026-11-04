@@ -1,4 +1,4 @@
-﻿let currentSlide = 0;
+let currentSlide = 0;
 
 const slides = document.querySelector(".slides");
 const images = document.querySelectorAll(".slides img");
